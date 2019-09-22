@@ -7,7 +7,6 @@ export class CourseUserService{
     coursesUserChanged=new Subject<CourseUser[ ]>();
 
 private courses: CourseUser[]=[
-    new CourseUser('web bootcamp','this course is for web development','http://foodtalk4you.com/wp-content/uploads/2017/01/Recipes-Banner.jpg', 446,'WebDevelopment','https://www.youtube.com/watch?v=1qcbGHbb5n4&t=441s'),
     
 ]
 
@@ -34,7 +33,11 @@ updateCourseUser(index:number,newCourse:CourseUser)
 deleteCourseUser(index:number){
     this.courses.splice(index,1);
  this.coursesUserChanged.next(this.courses.slice());
-
+}
+setCourses(courses:CourseUser[])
+{
+   this.courses=courses;
+ this.coursesUserChanged.next(this.courses.slice());
 
 }
 

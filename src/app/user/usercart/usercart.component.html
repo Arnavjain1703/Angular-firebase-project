@@ -1,6 +1,10 @@
 <app-user-course></app-user-course>
 <div class="bgback"></div>
 <h1 class="desc">COURSE YOU LIKED!!!!</h1>
+<button (click)="onSaveData()" >click</button>
+<button (click)="onFetch()" >ick</button>
+
+
 <div>
     <app-usercartitem
     *ngFor ="let course of courses;let i=index"
