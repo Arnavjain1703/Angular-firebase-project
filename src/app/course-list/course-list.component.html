@@ -1,0 +1,24 @@
+<div class="body">
+<app-header></app-header>
+
+<div > <H1 class="heading">COURSES ADDED BY YOU</H1></div>
+<button (click)="onSaveData()">click</button>
+<button (click)="onFetch()">fetvkjf</button>
+
+
+
+<div class="row" >
+<div class="col-lg-8">
+<app-course-item 
+*ngFor ="let course of courses;let i=index"
+[course]="course"
+[index]="i">
+</app-course-item>
+</div>
+<div class="col-lg-4 
+">
+    <h1 class="enter">WANT TO ENTER NO COURSES!!!</h1>
+       <span class="glyphicon glyphicon-hand-down"></span><br>
+    <BUTTON  routerLink="/new"class="btn btn-success">NEW COURSE</BUTTON>
+</div>
+</div>  

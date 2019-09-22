@@ -1,0 +1,21 @@
+
+<app-header2></app-header2>
+<div > <H1 class="heading">MUSIC COURSES</H1></div>
+<div class="image">
+<div class="row padding">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+   <div class="padding">     
+<div class="set">
+    <app-music-item
+    *ngFor ="let course of courses;let i=index"
+    [course]="course"
+    [index]="i">
+    </app-music-item>
+    </div>
+    </div>
+</div>
+<div class="col-lg-2"></div>
+  </div>
+  </div>  
+

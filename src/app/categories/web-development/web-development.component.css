@@ -1,0 +1,23 @@
+.heading
+{
+    text-align: center;
+    font-size:  60px;
+    font-family: cursive;
+    border-bottom: 4px solid black;
+    border-top:4px solid black;
+}
+.bgback
+{
+   background: url(https://miro.medium.com/max/1200/1*pE2fOVDikEUwiQJlh4ggzg.jpeg);
+   height:200px;
+   background-position:center;
+}
+.set
+{
+    margin-top:20px;
+    padding-top:30px;
+    padding-right:300px;
+    padding-left:300px;
+    padding-bottom:50px;
+    background:#02FCDF;
+}

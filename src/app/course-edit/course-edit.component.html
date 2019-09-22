@@ -1,0 +1,80 @@
+<app-header></app-header>
+<div class="container jumbotron">
+    
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit"  [disabled]="!courseForm.valid" class="btn btn-success">Save</button>
+                    <button type="button" (click)="onCancle()"class="btn btn-danger">Cancle</button>
+                    <button type="button" *ngIf="this.editMode"(click)="onDelete()" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" formControlName="name" class="form-control">
+                  
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="imagePath">Image URL</label>
+                        <input type="text" id="imagePath" formControlName="imagePath" class="form-control" 
+                        #imagePath>
+                      
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <label for="videoPath">VIDEO  URL</label>
+                                <input type="text" id="videoPath" formControlName="videoPath" class="form-control" 
+                                #videoPath>
+                              
+                            </div>
+                        </div>
+                        </div>
+                      
+            <div class="row">
+                    <div class="col-xs-12">
+                        <img [src]="imagePath.value" class="img-responsive">
+                    </div>
+            </div>
+            
+            <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea  formControlName="description"type="text" id="description" class="form-control" rows="6">
+                              </textarea>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="price">price</label>
+                                    <input type="number" id="price" formControlName="price" class="form-control">
+                                    </div>
+
+                                </div>
+                    </div>
+                
+
+    <input  type="radio" name="category" formControlName="category" value="WebDevelopment"> WEB DEVELOPMENT<br>
+    <input  type="radio" name="category" formControlName="category" value="Designing">DESIGNING<br>
+    <input  type="radio" name="category"formControlName="category"  value="Craft"> ARTS AND CRAFT<BR>
+    <input  type="radio" name="category" formControlName="category" value="Music">MUSIC<BR>
+
+  
+                      
+        </form>
+    </div>
+</div>
+</div>

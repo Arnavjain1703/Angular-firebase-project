@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default set">
+        <div class="container-fluid">
+            <div class="navbar-header">
+        <a routerLink="/frontpage" class="navbar-brand"><h4 class="item"><span class="glyphicon glyphicon-tree-deciduous"></span>  Study Easy</h4></a>
+            
+            </div>
+        
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                    <li class="dropdown" appDropdown>
+                            <a style="cursor:pointer" class="dropdown-toggle" role="button"><h4 class="item"><span class="glyphicon glyphicon-th"></span>  CATIGORIES</h4></a>         
+                                 <ul class="dropdown-menu">
+                                <li><a style="cursor:pointer" routerLink="/webdevelopment">WEB DEVELOPMENT</a></li>
+                                <li><a style="cursor:pointer " routerLink="/designing">DESIGNING</a></li>
+                                <li><a style="cursor:pointer" routerLink="/music">MUSIC</a></li>
+                                <li><a style="cursor:pointer" routerLink="/craft"> ARTS AND CRAFT</a></li>
+        
+                            </ul> 
+                        </li>
+                        <li role="presentation" routerLinkActive="active"><a [routerLink]="['/usercourse','usercourselist']" ><h4 class="item"><SPAN class="glyphicon glyphicon-home"></SPAN>  HOME</h4></a></li>
+                        <li role="presentation" routerLinkActive="active"><a routerLink="/usercart"><H4 class="item"><SPAN class="glyphicon glyphicon-heart-empty"></SPAN>  CART</H4></a></li>
+                        <li role="presentation" routerLinkActive="active"><a routerLink="/usermycourse"><H4 class="item"><SPAN class="glyphicon glyphicon-shopping-cart"></SPAN>  MY COURSES</H4></a></li>
+                    
+                    
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation" routerLinkActive="active"><a routerLink=" " ><h4 class="item"><span class=""></span>LOGOUT</h4></a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>

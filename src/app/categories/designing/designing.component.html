@@ -1,0 +1,18 @@
+<app-header2></app-header2>
+<div class="image"></div>
+<div class="bgcolor">
+<div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+        <div class="set">
+        <app-craft-item
+        *ngFor ="let course of courses;let i=index"
+        [course]="course"
+        [index]="i">
+        </app-craft-item>
+        </div>
+        </div>
+        <div class="col-lg-3"></div>
+        </div>
+    </div>
+    

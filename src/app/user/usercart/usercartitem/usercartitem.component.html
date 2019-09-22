@@ -1,0 +1,32 @@
+ <div class="container" (click)="description()" >
+    <div class="desc"><div class="size"><u>{{course.name}}</u></div>
+    <div style="text-align:center"> <img class="img2"
+    [src]="course.imagePath" 
+    alt="{{course.name}}" >
+  </div>
+    <div class="size">{{course.price}} Rs</div>
+    <div class="row">
+      <div class="col-lg-3"></div>
+        <div class="col-lg-3">
+        <span class="glyphicon glyphicon-hand-right"></span> <a class="btn btn-danger" (click)="onDelete()" style="cursor:pointer"><span class="glyphicon glyphicon-trash"></span>   X</a>
+        </div>
+        
+        <div class="col-lg-3">
+             
+          <div *ngIf="!buy" >
+          <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
+          <span class="glyphicon glyphicon-shopping-cart"></span>Buy course</a>
+          </div>
+
+         <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
+        </div>
+        <div class="col-lg-3"></div>
+      </div>
+     <div *ngIf="descrip" class="size">{{course.description}}</div>
+     </div>
+  </div>
+      
+             
+           
+  
+  

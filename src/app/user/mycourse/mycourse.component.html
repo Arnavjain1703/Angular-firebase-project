@@ -1,0 +1,18 @@
+<app-user-course></app-user-course>
+
+<div  class="bgback">
+</div>
+<div class="desc">
+    
+    <span class="glyphicon glyphicon-"></span>   YOUR COURSES!!!!</div>
+
+<div>
+
+    <div class="contentbg">
+    <app-mycourse-item
+    *ngFor ="let course of courses;let i=index"
+    [course]="course"
+    [index]="i">
+    </app-mycourse-item>
+    </div>
+    </div>

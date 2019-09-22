@@ -1,0 +1,38 @@
+
+
+.img
+{
+    border-right :solid 4px black;
+    
+    
+
+    
+
+}
+.set
+{
+    background:rgb(232, 233, 233);
+    border:solid 4px black;
+    
+}
+
+.glyphicon
+{
+    font-size: 20px;
+}
+.name
+{
+    border-right:solid black 4px;
+    
+}
+.button{
+    padding-top:30px;
+    text-align: center;
+}
+.desc{
+    text-align:center;
+    padding-top:10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 50px;
+    padding-bottom:20px;
+}

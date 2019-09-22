@@ -1,0 +1,39 @@
+
+.set
+{
+    background:rgb(232, 233, 233);
+    border-radius:1%;
+    box-shadow:5px 5px 10px black; 
+    
+}
+
+
+.glyphicon
+{
+    font-size: 20px;
+}
+.name
+{
+    border-right:solid black 1px;
+    
+}
+
+.desc{
+    
+    text-align: center;
+    font-family: cursive;
+    background: #EAECEE ;
+    box-shadow:10px 10px 15px black;
+    margin-bottom: 40px;
+    
+   
+}
+
+
+.size{
+    font-size: 200%
+}
+.img2{
+    height:200px ;width:50%;
+    box-shadow:5px 5px 5px black;
+}

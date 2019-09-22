@@ -1,0 +1,14 @@
+.set
+{
+    background:black;
+}
+.item
+{
+    color:white;
+}
+.item:hover{
+    color:red;
+}
+a:active{
+    color:red;
+}

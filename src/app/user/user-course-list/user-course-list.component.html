@@ -1,0 +1,24 @@
+<div class="backg">  
+<app-user-course></app-user-course>
+<h3 class="heading">Get Bootstrap courses for 50% Off</h3>
+<h3 class="heading">Offer Limited For Today only</h3>
+</div>
+<h1 class="heading2"> COURSES FOR YOU </h1>
+    <div class="row">
+    <div class="col-lg-3"><img src="https://comps.canstockphoto.com/young-man-in-eyeglasses-studying-with-image_csp58935673.jpg"></div>
+    <div class="col-lg-6">
+<div class="set">
+    <app-user-course-item 
+    *ngFor ="let course of courses;let i=index"
+    [course]="course"
+    [index]="i">
+    </app-user-course-item>
+    </div>
+    </div>
+    <div class="col-lg-3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2vN8rZPukgm0ziOgQwhQPzYX1czIkeYCa3rMfPOeorKI9c27o"></div>
+
+
+    <br>
+    </div>
+  
+    

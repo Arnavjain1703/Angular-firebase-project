@@ -1,0 +1,24 @@
+.col-lg-4{
+    text-align: center;
+    
+}
+
+.heading
+{
+    text-align: center;
+    font-size:  60px;
+    font-family: cursive;
+    border-bottom: 4px solid black;
+    border-top:4px solid black;
+}
+.enter
+{
+    font-family: cursive;
+}
+.body
+{
+    background:  #E2E0E3;
+    height:1000px
+    
+    
+}

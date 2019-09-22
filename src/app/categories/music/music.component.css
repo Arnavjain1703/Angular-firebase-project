@@ -1,0 +1,67 @@
+.heading
+{
+    text-align: center;
+    font-size:  60px;
+    font-family: cursive;
+    border-bottom: 4px solid black;
+    border-top:4px solid black;
+}
+
+.set
+{
+    background:rgb(232, 233, 233);
+    border-radius:1%;
+    box-shadow:5px 5px 10px black;
+    
+}
+.anima:hover{
+    animation: change 1s;
+}
+
+.glyphicon
+{
+    font-size: 20px;
+}
+.name
+{
+    border-right:solid black 1px;
+    
+}
+
+.desc{
+    
+    text-align: center;
+    font-family: cursive;
+    background: #EAECEE ;
+    box-shadow:10px 10px 15px black;
+    margin-bottom: 40px;
+    
+   
+}
+
+@keyframes change
+{
+
+from{ box-shadow:5px 5px 10px black}
+    to{ box-shadow:10px 10px 15px black};
+}
+.size{
+    font-size: 200%
+}
+.img2{
+    height:200px ;width:50%;
+    box-shadow:5px 5px 5px black;
+}
+hr
+{
+ border: solid 2px black;
+}
+
+.padding
+{
+    padding-bottom:100px;
+}
+.image
+{
+    background: url(https://s3.amazonaws.com/noupe/2011/03/music9.jpg);
+}
