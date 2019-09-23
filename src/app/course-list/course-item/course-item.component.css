@@ -1,19 +1,13 @@
 
-
-.img
-{
-    border-right :solid 4px black;
-    
-    
-
-    
-
-}
 .set
 {
     background:rgb(232, 233, 233);
-    border:solid 4px black;
+    border-radius:1%;
+    box-shadow:5px 5px 10px black; 
     
+}
+.anima:hover{
+    animation: change 1s;
 }
 
 .glyphicon
@@ -22,17 +16,36 @@
 }
 .name
 {
-    border-right:solid black 4px;
+    border-right:solid black 1px;
     
 }
-.button{
-    padding-top:30px;
-    text-align: center;
-}
+
 .desc{
-    text-align:center;
-    padding-top:10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 50px;
-    padding-bottom:20px;
+    
+    text-align: center;
+    font-family: cursive;
+    background: #EAECEE ;
+    box-shadow:10px 10px 15px black;
+    margin-bottom: 40px;
+    
+   
+}
+
+.size{
+    font-size: 200%
+}
+.img2{
+    height:200px ;width:50%;
+    box-shadow:5px 5px 5px black;
+}
+
+.length
+{    margin-top:20px;
+
+    margin-right:200px;
+    margin-bottom:20px;
+}   
+.play
+{
+    font-size:50px;
 }

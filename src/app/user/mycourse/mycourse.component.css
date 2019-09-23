@@ -17,3 +17,21 @@
     background:#D2B4DE ;
     padding-bottom:50px;
 }
+.background
+{
+    background:white;
+    padding-top:80px;
+    border:solid 4px black;
+}
+.button
+{
+    text-align: center;
+}
+img{
+    height:300px;
+    padding-left: 300px;
+}
+.styling
+{
+  font-family: cursive;
+}

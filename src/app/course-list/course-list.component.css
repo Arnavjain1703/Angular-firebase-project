@@ -15,10 +15,12 @@
 {
     font-family: cursive;
 }
-.body
+.col-lg-8
 {
-    background:  #E2E0E3;
-    height:1000px
     
-    
+    background:#BB8FCE
+}
+.button
+{
+  margin:20px;
 }

@@ -2,51 +2,99 @@
    <app-header></app-header>
     <div style="padding-bottom: 200px">
    <div class="container set">  <h1>GET YOURSELF REGISTERED</h1></div>
-   <div *ngIf="display" class="set "style="text-align:center"><h1>YOU REGISTERAD SUCCESSFULLY</h1></div>
+   <div 
+   *ngIf="display" 
+   class="set "
+   style="text-align:center">
+   <h1>YOU REGISTERAD SUCCESSFULLY</h1></div>
 
    <div class="row" >
    <div class="col-lg-4"></div>
    <div class="col-lg-4 userSignup">
    <h1>SIGNUP</h1>
    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <div class="form-group">
-        <label for="first-name" >FIRST NAME</label>
-        <input type="first-name" id="first-name" name="firstName" ngModel class="form-control" #firstName="ngModel" required>
-        <span class="error" *ngIf="!firstName.valid && firstName.touched">PLEASE ENTER FIRST NAME</span>
-    </div>
+   
      <div class="form-group">
-        <label for="last-name" >LAST NAME</label>
-        <input type="last-name" id="last-name" name="lastName" ngModel class="form-control" required #lastName="ngModel" #lastName="ngModel"required>
-        <span  class="error"*ngIf="!lastName.valid && lastName.touched">PLEASE ENTER LAST NAME</span> 
+        <label for="last-name" >NAME</label>
+        <input 
+        type="name" 
+        placeholder="NAME"
+         id="name"
+          name="name" 
+        ngModel class="form-control" 
+        required 
+        #lastName="ngModel"
+         required>
+        <span 
+         class="help-block"
+         *ngIf="!lastName.valid && lastName.touched">CORRECT NAME REQUIRED</span> 
     </div>
     <div class="form-group">
         <label for="email" >EMAIL</label>
-        <input type="email" id="email" name="email" ngModel class="form-control" required email #email="ngModel">
-        <span class="error" *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
+        <input 
+        type="email"
+        placeholder="EMAIL"
+        id="email"
+         name="email"
+         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+         ngModel class="form-control" required email #email="ngModel">
+        <span class="help-block" *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
      </div>
-     <div class="form-group">
-        <label for="password" >PASSWORD</label>
-        <input type="password" id="password" name="password" ngModel class="form-control" required #password="ngModel">
-        <span  class="error"*ngIf="!password.valid && password.touched">PLEASE ENTER PASSWORD</span>
-    </div>
-   <p> CHOOSE HOW DO U WANT TO SIGN UP</p>
-   <div class="form-group">
-    <div class="row">
-   <div class="col-lg-3"></div>
-   <div class="col-lg-3">
-   <input type="radio" name="admin" value=""  ngModel class="form-control"  #admin="ngModel">STUDENT<br>
-   </div> 
-   <div class="col-lg-3">   
-   <input type="radio" name="admin" value="true" ngModel class="form-control" #admin="ngModel">INSTRUCTOR<br>
-   </div>
-   <div class="col-lg-3"></div>
-   </div>
-    <div class="button"> 
-    <button class="btn btn-primary" [disabled]="!f.valid" type="submit"  >SIGN UP</button>
-    </div>
-    </div>
+
+     <div class="form-group" [class.has-error]="password.touched && password.invalid">
+      <label for="password" >PASSWORD</label>
+      <input type="password"
+       id="password"
+          [minlength]='6'
+          placeholder="PASSWORD"
+          name="password"
+          ngModel 
+          class="form-control"
+          required
+          #password="ngModel">
+      <span  
+      class="help-block"
+      *ngIf="!password.valid && password.errors?.required">
+      PLEASE ENTER  PASSWORD OF MINIMUM 6 CHARACTERS
+      </span>
+      </div>
+       <div 
+       class="form-group" 
+       [class.has-error]="confirmPassword.touched && confirmPassword.invalid">
+      <label for="confirmPassword" >CONFIRM PASSWORD</label>
+      <input 
+        type="password"
+        appConfirmEqualValidator="password"
+        id="confirmPassword" 
+        name="confirmPassword"
+        placeholder="CONFIRM PASSWORD"
+        ngModel class="form-control"
+        required 
+        #confirmPassword="ngModel">
+      <span  
+      class="help-block"
+      *ngIf="!confirmPassword.valid && confirmPassword.touched">
+      CONFIRM PASSWORD IS REQUIRED
+      </span>
+      <span
+        class="help-block"
+        *ngIf="!confirmPassword.valid && confirmPassword.errors?.notEqual">
+        PASSWORD AND CONFIRM PASSWORD DOSE NOT MATCH
+      </span>
+       
+  </div>
+      <div class="button">
+          <button routerLink="/login"
+             [disabled]="!f.valid"
+              type="submit"
+              class="btn btn-primary">
+              SIGNUP
+            </button>
+      </div>
 
     </form>
+
+      <div>ALREADY HAVE AN ACCOUNT? <a routerLink="/login">LOGIN</a></div>
 
 </div>
 

@@ -7,18 +7,41 @@
   <div class="size">{{course.price}} Rs</div>
   <div class="row">
       <div class="col-lg-6">
-           <div *ngIf="!add">
-           <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary" (click)="onAddToCart()" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-empty"></span>  ADD TO CART</a>
+
+           <div *ngIf="!add && authService.loggedIn()">
+           <span class="glyphicon glyphicon-hand-right"></span>
+            <button  class="btn btn-primary" (click)="onAddToCart()"  (click)="onSaveData()" 
+            style="cursor:pointer"><span class="glyphicon glyphicon-heart-empty">
+           </span> ADD TO CART</button>
            </div>
-           <div *ngIf="add"><span class="glyphicon glyphicon-heart"></span ><span>added to cart</span></div>
+
+           <div *ngIf="!authService.loggedIn()">
+              <span class="glyphicon glyphicon-hand-right"></span>
+               <button  class="btn btn-primary" routerLink="/login" 
+               style="cursor:pointer"><span class="glyphicon glyphicon-heart-empty">
+              </span> ADD TO CART</button>
+            </div>
+   
+
+           <div *ngIf="add && authService.loggedIn()"><span class="glyphicon glyphicon-heart"></span ><span>added to cart</span></div>
            </div>
+
           <div class="col-lg-6">
-            <div *ngIf="!buy" >
-              <span class="glyphicon glyphicon-hand-right"> </span> <a  (click)="onAddToMyCourse()"  class="btn btn-primary"style="cursor:pointer"> 
-              <span class="glyphicon glyphicon-shopping-cart"></span>Buy course</a>
+
+            <div *ngIf="!buy && authService.loggedIn()" >
+              <span class="glyphicon glyphicon-hand-right"> </span> <button (click)="onAddToMyCourse()"  (click)="onSaveMyCourseData()" class="btn btn-primary"style="cursor:pointer"> 
+              <span class="glyphicon glyphicon-shopping-cart"></span>Buy course</button>
              </div>
-       <div *ngIf="buy"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
-      </div>
+
+             <div *ngIf="!authService.loggedIn()" >
+                <span class="glyphicon glyphicon-hand-right"> </span> <button routerLink="/login" 
+                class="btn btn-primary"style="cursor:pointer"> 
+                <span class="glyphicon glyphicon-shopping-cart"></span>Buy course</button>
+               </div>
+  
+
+           <div *ngIf="buy && authService.loggedIn()"> <span class="glyphicon glyphicon-shopping-cart"></span><span>buyed course</span></div>
+          </div>
     </div>
    <div *ngIf="descrip" class="size">{{course.description}}</div>
    </div>

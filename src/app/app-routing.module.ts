@@ -13,6 +13,7 @@ import { CraftComponent } from './categories/craft/craft.component';
 import { DesigningComponent } from './categories/designing/designing.component';
 import { MusicComponent } from './categories/music/music.component';
 import { SignupComponent } from './signup/signup.component';
+import { AuthGuard } from './auth.guard';
 
 const appRoutes: Routes=[
     {path:'',redirectTo: 'frontpage', pathMatch:'full'}, 
@@ -23,7 +24,7 @@ const appRoutes: Routes=[
     {path:'login',component:LoginComponent},
     {path:'usercourse',component:UserCourseComponent},
     {path:'usercourse/usercourselist',component:UserCourseListComponent,
-     },
+    canActivate:[AuthGuard]},
     {path:'usercart',component:UsercartComponent},
     {path:'usermycourse',component:MycourseComponent},
     {path:'frontpage',component:FrontPageComponent},

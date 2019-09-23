@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './course-list/course-list.component';
@@ -32,9 +32,11 @@ import { CraftComponent } from './categories/craft/craft.component';
 import { CraftItemComponent } from './categories/craft/craft-item/craft-item.component';
 import { MusicComponent } from './categories/music/music.component';
 import { MusicItemComponent } from './categories/music/music-item/music-item.component';
-import { Header2Component } from './header2/header2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataStorageService } from './shared/data-storage.service';
+import { AuthService } from './auth/auth.service';
+import { ConfirmEqualValidatorDirective } from './shared/confirm-equal-validators.directive';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -63,8 +65,9 @@ import { DataStorageService } from './shared/data-storage.service';
     CraftComponent,
     CraftItemComponent,
     MusicComponent,
-    MusicItemComponent,
-    Header2Component,
+    MusicItemComponent, 
+    ConfirmEqualValidatorDirective,
+
     
   
   ],
@@ -76,7 +79,19 @@ import { DataStorageService } from './shared/data-storage.service';
     HttpClientModule
     
   ],
-  providers: [CourseService,CourseUserService,UserCartService,MyCourseService,DataStorageService],
+  providers: [CourseService,CourseUserService,UserCartService,MyCourseService,DataStorageService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule  implements OnInit {
+ constructor( private dataStorageService:DataStorageService)
+ {
+
+ }
+
+  ngOnInit()
+  {
+    
+
+ 
+  }
+ }

@@ -21,9 +21,13 @@
 }
 h1{
     text-align: center;
-font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-family: cursive;
 font-size: 400%;
     
+}
+
+h2{
+    font-family: cursive;
 }
 .bg{
     text-align: center;
@@ -33,14 +37,17 @@ font-size: 400%;
 input.ng-invalid.ng-touched{
     border:1px solid red;
 }
-.adjust
-{
-    text-align: center;
-    padding-top:60px;
-        
 
-}
 .proceed{
     font-size: 20px;
     font-family: cursive
+}
+.align-center
+{ margin-top:30px;
+   text-align: center;
+}
+.warning
+{
+  font-family: cursive;
+  color:red;
 }

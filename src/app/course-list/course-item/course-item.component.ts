@@ -7,7 +7,7 @@ import { CourseUser } from 'src/app/shared/courseuser.module';
   styleUrls: ['./course-item.component.css']
 })
 export class CourseItemComponent implements OnInit {
-
+   descrip=false;
   @Input () course:CourseUser;
   @Input()index:number;
   constructor() { }
@@ -15,4 +15,8 @@ export class CourseItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  description()
+  {
+    this.descrip=!this.descrip;
+  }
 }

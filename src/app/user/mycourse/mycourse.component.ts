@@ -14,11 +14,11 @@ export class MycourseComponent implements OnInit ,OnDestroy{
   courses:CourseUser[];
   constructor(private courseService:MyCourseService,
     private dataStorageService:DataStorageService) { }
-
+   
   
 
   ngOnInit() {
-    
+    this.dataStorageService.getmyCourses();
 this.courses=this.courseService. getMyCoursesUser();
 this.subscription=this.courseService.mycoursesChanged.subscribe((
   courses:CourseUser[])=>
@@ -28,22 +28,8 @@ this.subscription=this.courseService.mycoursesChanged.subscribe((
   )
   }
 
-  onSaveData()
-  {
-  this.dataStorageService.myCourses()
-   .subscribe(
-     (response:Response)=>
-    {
-       console.log(response);
-    }
-   );
-  }
-
-  onFetch()
-{
-    this.dataStorageService.getmyCourses();
-
-}
+  
+ 
   ngOnDestroy(){
     this.subscription.unsubscribe();
 

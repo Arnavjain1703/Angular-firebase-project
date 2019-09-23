@@ -1,15 +1,16 @@
 <app-user-course></app-user-course>
 <div class="bgback"></div>
 <h1 class="desc">COURSE YOU LIKED!!!!</h1>
-<button (click)="onSaveData()" >click</button>
-<button (click)="onFetch()" >ick</button>
-
+<div class="alignment">
+</div>
 
 <div>
+   
     <app-usercartitem
     *ngFor ="let course of courses;let i=index"
     [course]="course"
-    [index]="i"></app-usercartitem>
+    [index]="i">
+    </app-usercartitem>
     </div>
     
 

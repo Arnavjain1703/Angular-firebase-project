@@ -25,26 +25,16 @@ this.subscription=this.userCartService.cartChanged
 }
  );
 this.courses=this.userCartService.getUserCart();
+this.dataStorageService.getCart();
+
 }
 
 ngOnDestroy()
  {
    this.subscription.unsubscribe()
  }
- onSaveData()
- {
-   this.dataStorageService.userCart().subscribe(
-    (response:Response)=>
-   {
-      console.log(response);
-   }
-  );
- }
+ 
 
- onFetch()
- {
-  this.dataStorageService.getCart();
-
- }
+ 
 
 }

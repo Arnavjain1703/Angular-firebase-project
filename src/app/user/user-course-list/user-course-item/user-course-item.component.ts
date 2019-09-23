@@ -5,6 +5,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CourseUser } from 'src/app/shared/courseuser.module';
 import { UserCartService } from 'src/app/usercart.service';
 import { MyCourseService } from 'src/app/mycourse.sercice';
+import { AuthService } from 'src/app/auth/auth.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
  @Component({
    selector: 'app-user-course-item',
@@ -19,8 +21,12 @@ export class UserCourseItemComponent implements OnInit {
     
   @Input () course:CourseUser;
   @Input()index:number;
-  constructor(private acService:UserCartService,private mcService:MyCourseService
-        ) { }
+
+  constructor(private acService:UserCartService,
+              private mcService:MyCourseService,
+              private authService:AuthService,
+              private dataStorageService:DataStorageService,
+              ) { }
 
   ngOnInit() {
   }
@@ -42,6 +48,27 @@ export class UserCourseItemComponent implements OnInit {
   {
         this.descrip=!this.descrip;
   }
-  
+  onSaveData()
+ {
+   this.dataStorageService.userCart().subscribe(
+    (response:Response)=>
+   {
+      console.log(response);
+   }
+  );
+ }
+
+ onSaveMyCourseData()
+  { 
+    
+  this.dataStorageService.myCourses()
+   .subscribe(
+     (response:Response)=>
+    {
+       console.log(response);
+    }
+   );
+  }
+
   
 }

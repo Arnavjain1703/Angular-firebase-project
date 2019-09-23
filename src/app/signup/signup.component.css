@@ -18,7 +18,7 @@ H1
 .userSignup,.adminSignup
 {
  text-align: center;
-  box-shadow:10px 10px 20px black;
+  box-shadow:3px 3px 3px black;
 
  background:#EAECEE;
  border-radius:5%;
@@ -28,7 +28,7 @@ H1
 {
     background: #EAECEE;
     
-    box-shadow:5px 5px 5px black;
+    box-shadow:3px 3px 3px black;
     margin-bottom: 60px;
     
 }

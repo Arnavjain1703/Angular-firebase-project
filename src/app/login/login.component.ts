@@ -1,5 +1,7 @@
+import * as firebase from 'firebase';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,  NgForm } from '@angular/forms';
+import {   NgForm } from '@angular/forms';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,27 +10,35 @@ import { FormGroup,  NgForm } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 show=false;
-admiShow=false;
+errorshow=false;
+
 tk:any;
-  constructor() { }
+  constructor(private authService:AuthService) { }
 
   ngOnInit() {
     
 }
 
+errorShow()
+{
+  this.errorshow=true
+}
 adminShow()
 {
-this.admiShow=true;
-this.show=false
-}
+
+this.show=false}
+
 userShow()
 {
 this.show=true;
-this.admiShow=false;
+
 }
 
 onSubmit(form:NgForm)
-  {
-}
+  {   
+    const email =form.value.email;
+    const password=form.value.password;
+     this.authService.signinUser(email,password); 
+  }
 
 }

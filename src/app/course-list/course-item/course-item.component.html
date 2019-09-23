@@ -1,31 +1,37 @@
 
-  
-   <div class="row scale ">
-    <div class="col-lg-4 set"(click)="shows()"><div class="desc  " *ngIf="this.show">{{course.description}}</div>
-                          <div class="desc"*ngIf="!this.show"><h1><u>DESCRIPTION</u></h1></div>
-  </div>
-    <div class="col-lg-8">
-      <div class="row set">
-   <div class="col-lg-4 " style="padding-left:0%">
-     
-  <img style="height:100px ;width:100%"
-           
-        [src]="course.imagePath" 
-      alt="{{course.name}}" 
-      class="img-responsive img "
-       >
-       </div>
- <div class="col-lg-4 name" style="height:100px" >
-         <h1>{{course.name}}</h1>
-        
-    </div>
-    <div class="col-lg-4 button" style="height:100px" >
-      <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary " [routerLink]="[index,'edit']" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-filled"></span> EDIT</a>
-        <br>
-    </div>
-    </div>
-    </div>
-    </div>
-         
        
 
+         
+          <div class="length" (click)="description()" >
+            <div class="desc"><div class="size"><u>{{course.name}}</u></div>
+            <div style="text-align:center"> <img class="img2"
+            [src]="course.imagePath" 
+            alt="{{course.name}}" >
+          </div>
+          
+            <div class="size">{{course.price}} Rs</div>
+            <div class="row">
+              <div class="col-lg-4"> </div>
+               <div class="col-lg-4"><a  [href]="course.videoPath"><span class="glyphicon glyphicon-play-circle play"></span></a></div>
+               <div class="col-lg-4">
+      <span class="glyphicon glyphicon-hand-right"></span> <a  class="btn btn-primary " [routerLink]="[index,'edit']" style="cursor:pointer">    <span class="glyphicon glyphicon-heart-filled"></span> EDIT</a>
+
+               </div>
+             </div>
+               <div *ngIf="descrip" class="size">{{course.description}}</div>
+                 
+            
+          </div>
+          </div>
+          
+              
+                     
+                   
+          
+          
+               
+             
+      
+      
+      
+      

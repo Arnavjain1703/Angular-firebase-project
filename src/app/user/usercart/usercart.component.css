@@ -9,3 +9,11 @@
     background-size:cover;
     background-position:center;
 }
+.alignment{
+    text-align: center;
+
+}
+.style{
+    font-family: cursive;
+    margin:30px;
+}

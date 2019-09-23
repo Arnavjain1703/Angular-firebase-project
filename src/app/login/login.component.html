@@ -13,40 +13,50 @@
         <h1>LOGIN</h1>
             <div class="form-group">
                     <label for="email" >Mail</label>
-                    <input type="email" id="email" name="email" ngModel class="form-control" required email #email="ngModel">
+                    <input type="email"
+                     id="email" 
+                     name="email"
+                     ngModel class="form-control"
+                     required
+                     email
+                     #email="ngModel">
                     <span *ngIf="!email.valid && email.touched">PLEASE ENTER CORRECT EMAIL</span>
                 </div>
         <div class="form-group">
                 <label for="password" >PASSWORD</label>
-                <input type="password" id="password" name="password" ngModel class="form-control" required #password="ngModel">
+                <input
+                 type="password" 
+                 id="password" 
+                 name="password"
+                  ngModel class="form-control" 
+                  required
+                   #password="ngModel">
                 <span *ngIf="!password.valid && password.touched">please enter password</span>
             </div>
-    <p> CHOOSE HOW DO U WANT TO login UP</p>
-        <div class="row">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-3">
-                  <input type="radio" name="admin" value="" ngModel class="form-control"  #admin="ngModel" >user
-            </div>
-            <div class="col-lg-3">
-               <input type="radio" name="admin" value="true" ngModel class="form-control" #admin="ngModel">instructor<br>
-            </div>  
-            <div class="col-lg-3"></div>
-        </div>
+    
             
-    <div class="button">
-    <button class="btn btn-primary" (click)="adminShow()"  [disabled]="!f.valid" type="submit"
-     *ngIf="admin.value">Login</button>
-    <button class="btn btn-primary" (click)="userShow()"   [disabled]="!f.valid" type="submit"
-    *ngIf="!admin.value">Login</button>
+     <div class="button">
+    <button class="btn btn-primary" (click)="userShow()"    [disabled]="!f.valid" type="submit"
+    >Login</button>
     </div>
      </form>
+
+     <div class="text-align:center" *ngIf="errorshow && !authService.loggedIn()"><h5 class="warning">YOU DONT HAVE ANY ACCOUNT PLEASE REGISTER YOURSELVES </h5></div>
+
      </div>
      <div class=col-lg-4></div>
     </div>
-     <div class=" adjust"><button type="button" *ngIf="admiShow" routerLink="/courselist"class="proceed btn btn-success"><span class="glyphicon glyphicon-hand-right"></span>      POOCEED FURTHER</button>
-     <button type="button adjust" *ngIf="show" [routerLink]="['/usercourse','usercourselist']"class="proceed btn btn-success"><span class="glyphicon glyphicon-hand-right"></span>     POOCEED FURTHER</button></div>        
-
+   
+      <div class="align-center">
+     <button type="button "
+      *ngIf=" show" 
+      (click)="errorShow()"
+      class="   proceed btn btn-success  "
+      [routerLink]="['/usercourse','usercourselist']"
+      ><span class="glyphicon glyphicon-hand-right">
+     </span>     PROCEED FURTHER</button></div>        
+      </div>
     
     </div>
-</div>
+
 

@@ -2,13 +2,26 @@
 {
     background:black;
 }
-.item
-{
-    color:white;
-}
+
 .item:hover{
     color:red;
 }
-a:active{
-    color:red;
+
+h4{
+    color:white;
+
+}
+.button
+{
+    margin-left:6px;
+    margin-right:6px;
+    background:black;
+    color:white;
+    border:solid black 2px;
+
+}
+.click
+{
+    background:white;
+    color:black;
 }
